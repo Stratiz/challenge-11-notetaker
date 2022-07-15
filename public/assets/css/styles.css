@@ -28,12 +28,14 @@ body {
   resize: none;
   height: calc(100% - 63px);
   padding-top: 15px;
+  display: block;
 }
 
 .note-title {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
+  display: block;
 }
 
 .note-title:read-only,
