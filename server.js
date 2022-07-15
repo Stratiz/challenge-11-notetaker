@@ -70,5 +70,5 @@ app.delete("/api/notes/:id", (req, res) => {
 
 // Start server
 app.listen(process.env.PORT, () => {
-    console.log('Server started on port' + process.env.PORT);
+    console.log('Server started on port ' + process.env.PORT);
 });
