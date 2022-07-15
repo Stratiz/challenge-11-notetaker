@@ -38,10 +38,11 @@ function GetNotesJSON() {
     }
 }
 
-app.get("/api/notes", (req, res) => {
+app.get("/api/notes", (req, res) => { // Return notes json table from db.json
     res.json(GetNotesJSON());
 });
-app.post("/api/notes", (req, res) => {
+
+app.post("/api/notes", (req, res) => { // Add note to the JSON table and return the new note table
     let currentNotes = GetNotesJSON();
     if (req.body.title && req.body.text) {
         req.body.id = crypto.randomUUID();
@@ -68,6 +69,6 @@ app.delete("/api/notes/:id", (req, res) => {
 });
 
 // Start server
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
+app.listen(process.env.PORT, () => {
+    console.log('Server started on port' + process.env.PORT);
 });
